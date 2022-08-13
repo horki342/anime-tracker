@@ -1,0 +1,10 @@
+.card-text {
+    font-size: small;
+}
+
+.cards-container {
+    border-color: red !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 80vh;
+}

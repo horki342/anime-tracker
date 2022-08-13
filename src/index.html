@@ -6,16 +6,394 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helo</title>
+
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    Hello World!
-    <h1>Example heading <span class="badge bg-secondary">New</span></h1>
-    <h2>Example heading <span class="badge bg-secondary">New</span></h2>
-    <h3>Example heading <span class="badge bg-secondary">New</span></h3>
-    <h4>Example heading <span class="badge bg-secondary">New</span></h4>
-    <h5>Example heading <span class="badge bg-secondary">New</span></h5>
-    <h6>Example heading <span class="badge bg-secondary">New</span></h6>
+
+    <main class="container-fluid text-center p-3 pt-1 pb-0">
+        <!-- Proverbs -->
+        <header class="row text-center align-items-center proverbs mb-3 border-bottom">
+            <div class="col-11">
+                <div class="row align-items-center">
+                    <div class="col-9 proverb text-start">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi deserunt repellendus omnis nihil,
+                        rerum, eveniet laborum, harum dicta quo nulla sequi veritatis iure molestiae. Ullam, autem
+                        tenetur sunt, vel accusantium qui saepe totam doloribus veniam exercitationem sit possimus
+                        asperiores minus!
+                    </div>
+                    <div class="col-3 author">Author</div>
+                </div>
+            </div>
+            <!-- Next proverb btn -->
+            <div class="col-1 mb-1">
+                <svg class="icon" name="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M468.9 32.11c13.87 0 27.18 10.77 27.18 27.04v145.9c0 10.59-8.584 19.17-19.17 19.17h-145.7c-16.28 0-27.06-13.32-27.06-27.2c0-6.634 2.461-13.4 7.96-18.9l45.12-45.14c-28.22-23.14-63.85-36.64-101.3-36.64c-88.09 0-159.8 71.69-159.8 159.8S167.8 415.9 255.9 415.9c73.14 0 89.44-38.31 115.1-38.31c18.48 0 31.97 15.04 31.97 31.96c0 35.04-81.59 70.41-147 70.41c-123.4 0-223.9-100.5-223.9-223.9S132.6 32.44 256 32.44c54.6 0 106.2 20.39 146.4 55.26l47.6-47.63C455.5 34.57 462.3 32.11 468.9 32.11z" />
+                </svg>
+            </div>
+        </header>
+        <!-- Search bar + Cards area -->
+        <div class="row gx-0">
+            <div class="col-9">
+                <div class="container p-0">
+                    <!-- Search bar -->
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Enter anime title or its description..."
+                            aria-label="Recipient's username with two button addons">
+                        <button class="btn btn-outline-danger" type="button">Reset <svg class="icon" name="trash"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                            </svg></button>
+                        <button class="btn btn-outline-success" type="button">Search <svg class="icon" name="search"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                            </svg></button>
+                    </div>
+
+                    <!-- Cards -->
+                    <div class="cards-container container-fluid p-0 border">
+                        <div class="cards row row-cols-auto">
+                            <div class="col card p-0 m-3" style="width: 20rem;">
+                                <img src="https://image.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+                                    class="card-img-top border-bottom" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anime1</h5>
+                                    <p class="card-text border-bottom">Some quick example text to build on the card
+                                        title
+                                        and make up the
+                                        bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-outline-dark" id="remove"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Remove"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="seen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Seen"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="watch"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Watch"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path
+                                                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="share"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Share"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark none" id="add"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Add"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                        </svg></button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a href="#">link</a>
+                                </div>
+                            </div>
+                            <div class="col card p-0 m-3" style="width: 20rem;">
+                                <img src="https://image.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+                                    class="card-img-top border-bottom" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anime1</h5>
+                                    <p class="card-text border-bottom">Some quick example text to build on the card
+                                        title
+                                        and make up the
+                                        bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-outline-dark" id="remove"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Remove"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="seen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Seen"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="watch"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Watch"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path
+                                                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="share"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Share"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark none" id="add"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Add"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                        </svg></button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a href="#">link</a>
+                                </div>
+                            </div>
+                            <div class="col card p-0 m-3" style="width: 20rem;">
+                                <img src="https://image.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+                                    class="card-img-top border-bottom" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anime1</h5>
+                                    <p class="card-text border-bottom">Some quick example text to build on the card
+                                        title
+                                        and make up the
+                                        bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-outline-dark" id="remove"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Remove"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="seen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Seen"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="watch"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Watch"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path
+                                                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="share"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Share"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark none" id="add"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Add"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                        </svg></button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a href="#">link</a>
+                                </div>
+                            </div>
+                            <div class="col card p-0 m-3" style="width: 20rem;">
+                                <img src="https://image.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+                                    class="card-img-top border-bottom" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anime1</h5>
+                                    <p class="card-text border-bottom">Some quick example text to build on the card
+                                        title
+                                        and make up the
+                                        bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-outline-dark" id="remove"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Remove"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="seen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Seen"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="watch"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Watch"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path
+                                                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="share"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Share"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark none" id="add"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Add"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                        </svg></button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a href="#">link</a>
+                                </div>
+                            </div>
+                            <div class="col card p-0 m-3" style="width: 20rem;">
+                                <img src="https://image.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+                                    class="card-img-top border-bottom" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anime1</h5>
+                                    <p class="card-text border-bottom">Some quick example text to build on the card
+                                        title
+                                        and make up the
+                                        bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-outline-dark" id="remove"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Remove"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="seen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Seen"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="watch"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Watch"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path
+                                                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="share"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Share"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark none" id="add"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Add"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                        </svg></button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a href="#">link</a>
+                                </div>
+                            </div>
+                            <div class="col card p-0 m-3" style="width: 20rem;">
+                                <img src="https://image.shutterstock.com/image-illustration/aesthetic-illustration-girl-sitting-on-600w-1919058461.jpg"
+                                    class="card-img-top border-bottom" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Anime1</h5>
+                                    <p class="card-text border-bottom">Some quick example text to build on the card
+                                        title
+                                        and make up the
+                                        bulk of the card's content.</p>
+                                    <button type="button" class="btn btn-outline-dark" id="remove"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Remove"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM394.8 466.1C393.2 492.3 372.3 512 346.9 512H101.1C75.75 512 54.77 492.3 53.19 466.1L31.1 128H416L394.8 466.1z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="seen"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Seen"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M182.6 246.6C170.1 259.1 149.9 259.1 137.4 246.6L57.37 166.6C44.88 154.1 44.88 133.9 57.37 121.4C69.87 108.9 90.13 108.9 102.6 121.4L159.1 178.7L297.4 41.37C309.9 28.88 330.1 28.88 342.6 41.37C355.1 53.87 355.1 74.13 342.6 86.63L182.6 246.6zM182.6 470.6C170.1 483.1 149.9 483.1 137.4 470.6L9.372 342.6C-3.124 330.1-3.124 309.9 9.372 297.4C21.87 284.9 42.13 284.9 54.63 297.4L159.1 402.7L393.4 169.4C405.9 156.9 426.1 156.9 438.6 169.4C451.1 181.9 451.1 202.1 438.6 214.6L182.6 470.6z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="watch"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Watch"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path
+                                                d="M279.6 160.4C282.4 160.1 285.2 160 288 160C341 160 384 202.1 384 256C384 309 341 352 288 352C234.1 352 192 309 192 256C192 253.2 192.1 250.4 192.4 247.6C201.7 252.1 212.5 256 224 256C259.3 256 288 227.3 288 192C288 180.5 284.1 169.7 279.6 160.4zM480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6V112.6zM288 112C208.5 112 144 176.5 144 256C144 335.5 208.5 400 288 400C367.5 400 432 335.5 432 256C432 176.5 367.5 112 288 112z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark" id="share"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Share"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M503.7 226.2l-176 151.1c-15.38 13.3-39.69 2.545-39.69-18.16V272.1C132.9 274.3 66.06 312.8 111.4 457.8c5.031 16.09-14.41 28.56-28.06 18.62C39.59 444.6 0 383.8 0 322.3c0-152.2 127.4-184.4 288-186.3V56.02c0-20.67 24.28-31.46 39.69-18.16l176 151.1C514.8 199.4 514.8 216.6 503.7 226.2z" />
+                                        </svg></button>
+                                    <button type="button" class="btn btn-outline-dark none" id="add"
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                        data-bs-custom-class="custom-tooltip" data-bs-title="Add"><svg class="icon"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                        </svg></button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <a href="#">link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-3 border">
+                Sidebar
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container-fluid p-3 bg-dark text-center mt-3 border-top">
+        <div class="row">
+            <!-- Social networking -->
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                        <a href="https://github.com/horki342/anime-tracker" class="" target="_blank">Github</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"/></svg>
+                        <a href="#">arthurtopal342@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Themes -->
+            <div class="col">
+                <div class="button-group">
+                    <div class="button btn btn-outline-light">Light</div>
+                    <div class="button btn btn-outline-light">Dark</div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
