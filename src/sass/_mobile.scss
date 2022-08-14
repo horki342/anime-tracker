@@ -1,0 +1,32 @@
+/*
+    Unit: px
+    [978; infinity] = no mobilization
+*/
+
+@media screen and (max-width: 978px) {
+    .anime-card {
+        width: 18rem !important;
+    }    
+}
+
+@media screen and (max-width: 892px) {
+    .anime-card {
+        width: 16rem !important;
+    }
+}
+
+@media screen and (max-width: 806px) {
+    .anime-card {
+        width: 14rem !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .anime-card {
+        width: 90% !important;
+    }
+
+    footer {
+        font-size: small;
+    }
+}

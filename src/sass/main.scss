@@ -1,7 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+@import "icons";
 @import "search-proverbs-bar";
 @import "cards";
 @import "footer";
+@import "sidebar";
+@import "mobile";
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -24,5 +27,17 @@ a {
 
     &:hover {
         color: #d1d1d1;
+    }
+}
+
+.nav-container {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 2%;
+
+    svg {
+        fill: $white;
     }
 }

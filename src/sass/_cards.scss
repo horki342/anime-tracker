@@ -2,8 +2,11 @@
     font-size: small;
 }
 
+.anime-card {
+    width: 20rem !important;
+}
+
 .cards-container {
-    border-color: red !important;
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 80vh;

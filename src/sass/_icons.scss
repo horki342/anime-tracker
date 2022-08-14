@@ -1,0 +1,53 @@
+.icon {
+    width: 1rem;
+    height: 1rem;
+
+    &[name='trash'] {
+        fill: $red;
+    }
+
+    &[name='search'] {
+        fill: $green;
+    }
+    
+    &[name='anim'] {
+        cursor: pointer;
+        fill: $black;
+
+        &:hover {
+            animation: rotation infinite linear 1s;
+            -webkit-animation: rotation infinite linear 1s;
+            -moz-animation: rotation infinite linear 1s;
+            -o-animation: infinite linear 1s;
+        }
+    }
+}
+
+a:hover, button:hover .icon {
+    fill: $white;
+}
+
+.icon[name='footer'] {
+    fill: #fafafa;
+}
+
+a:hover, button:hover .icon[name='footer'] {
+    fill: $gray-800;
+}
+
+// rotation animation for icons
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+    }
+}
