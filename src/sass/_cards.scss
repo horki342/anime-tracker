@@ -4,10 +4,11 @@
 
 .anime-card {
     width: 20rem !important;
+    transition: 2s;
 }
 
 .cards-container {
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 80vh;
+    height: 80vh;
 }
